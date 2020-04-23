@@ -72,3 +72,34 @@ and pass it into the connect()
 ```
 export default connect(mapStateToProps)(App);
 ```
+### step 4
+update the state value 
+make one functin in the app component 
+```const mapDispatchToProps = (dispatch) => {
+  return {
+      changeData:(name) =>{dispatch({type:'CHANGE_NAME',data:name})}
+  }
+}
+```
+and export it like this
+```
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+```
+
+now come to the reducer function where action perameter is set 
+```
+ const reducer = (state = istate, action) => {
+    console.log('this is action ',action)
+     if (action.type === 'CHANGE_NAME'){
+        return{
+            ...state,
+            name:action.data
+        }
+    }
+    else{
+        return state
+    }
+}
+```
+
+
