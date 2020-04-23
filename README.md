@@ -14,12 +14,12 @@ go  >> index.js
        import { createStore } from 'redux';
        import { Provider } from 'react-redux';
     ```
-### Now make store 
+ Now make store 
 
 ```base
 const store = createStore()
 ```
-### wrape your App component with Provider(used for communicate react app with redux ) 
+wrape your App component with Provider(used for communicate react app with redux ) 
   ```
   ReactDOM.render(
                 <React.StrictMode>
@@ -32,10 +32,12 @@ const store = createStore()
   ```
   
 ### step 2
-### create reducer (is simeple function and it has data which we want to change )
-   ### make folder 
-        ```<reducers> ```
-    make file reducer.js
+ create reducer (is simeple function and it has data which we want to change )
+ make folder 
+        ```
+            <reducers> 
+         ```
+ make file reducer.js
    ``` 
     const istate = {
     name:'jemish',
@@ -45,19 +47,19 @@ const store = createStore()
     return state
     }
    ```
-   #### import this file into index.js 
-   #### we need to assign reduser in createStore() 
+   import this file into index.js 
+   we need to assign reduser in createStore() 
     ```base
         const store = createStore(reducer)
     ```
    ### step 3 
-   ### access these data into the App component 
+   access these data into the App component 
    
    ```import {connect} form 'react-redux'```
    
-###   wrap the App component with connect like
+   wrap the App component with connect like
    ```export default connect()(App);```
-   #### so now we need to get the state data and convert into the props 
+so now we need to get the state data and convert into the props 
   ```
     const mapStateToProps = (state) =>{
         return{
@@ -66,7 +68,7 @@ const store = createStore()
         }
      }
   ```
-#### and pass it into the connect()
+and pass it into the connect()
 ```
 export default connect(mapStateToProps)(App);
 ```
