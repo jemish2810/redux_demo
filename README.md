@@ -7,8 +7,8 @@ install these 2 package
 npm install redux react-redux
 ```
 step 1
-now we need to create store 
-    go  >> index.js 
+now we need to create store
+go  >> index.js 
     import 
     ```bash
        import { createStore } from 'redux';
