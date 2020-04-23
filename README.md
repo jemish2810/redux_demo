@@ -20,7 +20,8 @@ Now make store >>
 const store = createStore()
 ```
 wrape your App component with Provider(used for communicate react app with redux ) >>
-            ```ReactDOM.render(
+  ```
+  ReactDOM.render(
                 <React.StrictMode>
                     <Provider store = {store}>
                     <App />
@@ -28,7 +29,8 @@ wrape your App component with Provider(used for communicate react app with redux
                 </React.StrictMode>,
                 document.getElementById('root')
             );
-           ```
+  ```
+  
 step 2
 create reducer (is simeple function and it has data which we want to change )
     make folder 
