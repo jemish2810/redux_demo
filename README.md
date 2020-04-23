@@ -6,7 +6,7 @@ install these 2 package
 ```bash
 npm install redux react-redux
 ```
-#step 1
+##step 1
 now we need to create store
 go  >> index.js 
     import 
@@ -31,7 +31,7 @@ wrape your App component with Provider(used for communicate react app with redux
             );
   ```
   
-#step 2
+##step 2
 create reducer (is simeple function and it has data which we want to change )
     make folder 
         ```<reducers> ```
