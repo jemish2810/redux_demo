@@ -102,4 +102,79 @@ now come to the reducer function where action perameter is set
 }
 ```
 
+# redux thunk 
+it is one package or middelware used for performing async task like get/post/put.. etc 
+
+## instalation 
+``` 
+npm install redux-thunk
+```
+index.js
+```
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+```
+```
+const store = createStore(reducer,applyMiddleware(thunk));
+```
+
+or if you are useing google chrome extension redux then
+```
+  import { createStore, applyMiddleware, compose } from 'redux';
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+```
+create myaction2.js in action folder
+
+```
+export const anotherChange = () => {
+    return (dispatch)=>{
+        fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(respo=>respo.json())
+        .then(result=>{
+            dispatch({type:'THUNKCHANGE',data:result[0].title})
+        })
+    }
+  }
+export default anotherChange
+```
+import it into app.js file 
+get data 
+```
+const mapStateToProps = (state) =>{
+  return{
+    myname:state.name,
+    islogin:state.login,
+    title:state.title
+  }
+}
+```
+
+```
+const mapDispatchToProps = (dispatch) => {
+  return {
+      changeData:(name) =>{dispatch(anotherName(name))},
+      thunkChange:() =>{dispatch(anotherChange())},
+  }
+}
+```
+
+```
+               <button onClick={()=>{props.thunkChange()}}>Thunk change</button>
+```
+make action on button clicked 
+```
+else if(action.type === 'THUNKCHANGE') {
+        return {
+            ...state,
+            title: action.data
+        }
+    }
+```
+
+
+
+ 
+
+
 
