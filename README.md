@@ -3,10 +3,10 @@
 To add Redux into your react project follow below steps
 
 install these 2 package 
-```bash
-npm install redux react-redux
-```
-##step 1
+    ```bash
+    npm install redux react-redux
+    ```
+# step 1
 now we need to create store
 go  >> index.js 
     import 
@@ -14,7 +14,7 @@ go  >> index.js
        import { createStore } from 'redux';
        import { Provider } from 'react-redux';
     ```
-Now make store >>
+## Now make store 
 
 ```base
 const store = createStore()
